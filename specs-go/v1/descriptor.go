@@ -69,6 +69,12 @@ type Platform struct {
 	// Variant is an optional field specifying a variant of the CPU, for
 	// example `v7` to specify ARMv7 when architecture is `arm`.
 	Variant string `json:"variant,omitempty"`
+
+	// Features
+	Features []string `json:"features,omitempty"`
+
+	// Compatibilities
+	Compatibilities map[string]string `json:"compatibilities,omitempty"`
 }
 
 // DescriptorEmptyJSON is the descriptor of a blob with content of `{}`.
