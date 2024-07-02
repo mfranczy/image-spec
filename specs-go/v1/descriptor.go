@@ -69,6 +69,15 @@ type Platform struct {
 	// Variant is an optional field specifying a variant of the CPU, for
 	// example `v7` to specify ARMv7 when architecture is `arm`.
 	Variant string `json:"variant,omitempty"`
+
+	// Features is an optional field specyfing list of known cpu features,
+	// A source of known features is golang.org/x/sys/cpu package.
+	Features []string `json:"features,omitempty"`
+
+	// Compatibilities is an optional field specyfing labels for various aspects
+	// of OS or hardware that can be used to determine whether the host is compatbile
+	// with container.
+	Compatibilities map[string]string `json:"compatibilities,omitempty"`
 }
 
 // DescriptorEmptyJSON is the descriptor of a blob with content of `{}`.
